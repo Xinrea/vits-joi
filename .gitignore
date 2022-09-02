@@ -1,6 +1,5 @@
-DUMMY1
-DUMMY2
-DUMMY3
+filelists
+joi
 logs
 __pycache__
 .ipynb_checkpoints
@@ -9,3 +8,10 @@ __pycache__
 build
 *.c
 monotonic_align/monotonic_align
+pretrained_models
+generator/tmp
+
+vits-env
+generator-env
+
+.vscode

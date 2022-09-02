@@ -35,7 +35,8 @@ def cleaned_text_to_sequence(cleaned_text):
       sequence.append(_symbol_to_id[symbol])
     else:
       for s in symbol:
-        sequence.append(_symbol_to_id[s])
+        if s in _symbol_to_id:
+          sequence.append(_symbol_to_id[s])
     sequence.append(_symbol_to_id[" "])
   if sequence[-1] == _symbol_to_id[" "]:
     sequence = sequence[:-1]

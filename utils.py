@@ -85,7 +85,6 @@ def plot_spectrogram_to_numpy(spectrogram):
     mpl_logger.setLevel(logging.WARNING)
   import matplotlib.pylab as plt
   import numpy as np
-  
   fig, ax = plt.subplots(figsize=(10,2))
   im = ax.imshow(spectrogram, aspect="auto", origin="lower",
                   interpolation='none')
@@ -147,7 +146,6 @@ def get_hparams(init=True):
                       help='JSON file for configuration')
   parser.add_argument('-m', '--model', type=str, required=True,
                       help='Model name')
-  
   args = parser.parse_args()
   model_dir = os.path.join("./logs", args.model)
 
@@ -165,7 +163,6 @@ def get_hparams(init=True):
     with open(config_save_path, "r") as f:
       data = f.read()
   config = json.loads(data)
-  
   hparams = HParams(**config)
   hparams.model_dir = model_dir
   return hparams
@@ -215,7 +212,6 @@ def get_logger(model_dir, filename="train.log"):
   global logger
   logger = logging.getLogger(os.path.basename(model_dir))
   logger.setLevel(logging.DEBUG)
-  
   formatter = logging.Formatter("%(asctime)s\t%(name)s\t%(levelname)s\t%(message)s")
   if not os.path.exists(model_dir):
     os.makedirs(model_dir)
@@ -232,7 +228,6 @@ class HParams():
       if type(v) == dict:
         v = HParams(**v)
       self[k] = v
-    
   def keys(self):
     return self.__dict__.keys()
 
