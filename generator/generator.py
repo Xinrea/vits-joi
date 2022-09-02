@@ -1,8 +1,5 @@
 '''
-根据原始音频文件生成数据集，主要包括以下步骤：
-音频分割 -> 降噪 -> 语音识别
-Each audio file is a single-channel 16-bit PCM WAV
-with a sample rate of 22050 Hz.
+根据原始音频文件与字幕文件生成数据集
 '''
 from locale import normalize
 from pathlib import Path
